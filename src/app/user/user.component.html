@@ -1,0 +1,34 @@
+
+<h1>Welcome!!</h1>
+<div class = "container mt-5">
+    <div class="form-group">
+        <h2> HI USER.....</h2>
+        <input type="text" class="form-control" placeholder="Search (First Name/ Last Name/ Loan Number)......" [(ngModel)]="filterTerm">
+       
+      </div>
+      <br><br>
+ 
+    <table id="t01" >
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Loan Number</th>
+                <th scope="col">Address</th>
+              </tr>
+        </thead>
+        <tbody>
+           
+            <tr *ngFor="let user of users |filter:filterTerm">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.loanNumber}}</td>
+                <td>{{user.address}}</td>
+              </tr>
+
+        </tbody>
+    </table>
+    <button (click)="OnLogOut()" class="btn btn-primary">Logout</button>
+
+</div>
+
